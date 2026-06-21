@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  --color-forest: #14442E;
+  --color-forest-mid: #1E6645;
+  --color-forest-bright: #27A265;
+  --color-forest-pale: #EBF7F1;
+  --color-gold: #C9982A;
+  --color-gold-light: #E8BA52;
+  --color-gold-pale: #FDF6E3;
+  --color-cream: #FAF7F0;
+  --color-cream2: #F2EBD9;
+  --color-ink: #141414;
+  --color-ink2: #2A2A2A;
+
+  --bg-hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%2314442E' stroke-width='1'%3E%3Cpolygon points='60,5 115,32 115,88 60,115 5,88 5,32'/%3E%3Cpolygon points='60,22 98,42 98,82 60,102 22,82 22,42'/%3E%3C/g%3E%3C/svg%3E");
+  --bg-cta-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1'%3E%3Cpolygon points='60,5 115,32 115,88 60,115 5,88 5,32'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Base styles */
+body {
+  @apply bg-cream text-ink antialiased font-sans;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
